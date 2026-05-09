@@ -2,12 +2,10 @@ FROM docker.m.daocloud.io/node:18
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY updo-app/ ./
 
 RUN npm config set registry https://registry.npmmirror.com && \
     npm install --production
-
-COPY . .
 
 EXPOSE 3000
 
